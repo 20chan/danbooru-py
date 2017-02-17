@@ -13,4 +13,4 @@ def get(size=(300, 300)) -> (Image, int):
             response = requests.get('https://danbooru.donmai.us{}'.format(post['file_url']))
             img = Image.open(BytesIO(response.content))
             img = img.resize(size, Image.ANTIALIAS)
-            yield img, 'sqe'[post['rating']]
+            yield img, 'sqe'.index(post['rating'])
