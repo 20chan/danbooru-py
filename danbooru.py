@@ -1,8 +1,9 @@
 import json
 import urllib.request
+from typing import Generator
 
 
-def pages(limit=10, page=1):
+def pages(limit: int = 10, page: int = 1) -> Generator:
     cur = page
     while True:
         url = 'https://danbooru.donmai.us/posts.json?limit={}&page={}'.format(limit, cur)
