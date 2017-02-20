@@ -18,6 +18,6 @@ if __name__ == '__main__':
         post = next(p)
         if 'file_url' in post.keys():
             if post['rating'] == 'e':
-                loc = 'Download\\{}.jpg'.format(post['id'])
+                loc = 'Download\\{}.png'.format(post['id'])
                 print('downloading {} in {}...'.format(post['id'], loc))
                 urllib.request.urlretrieve('https://danbooru.donmai.us{}'.format(post['file_url']), loc)
